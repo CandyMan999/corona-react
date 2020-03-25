@@ -12,7 +12,7 @@ import { typeDefs, resolvers } from "./graphql";
 
 const app = express();
 const corsOptions = {
-  origin: "https://coronavirus-react.herokuapp.com/",
+  origin: "http://localhost:3000",
   credentials: true
 };
 app.use(cors(corsOptions));
@@ -30,7 +30,12 @@ mongoose
   .then(() => console.log("DB Conected"))
   .catch(err => console.error(err));
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  playground: true
+});
 server.applyMiddleware({ app });
 
 if (process.env.NODE_ENV === "production") {
