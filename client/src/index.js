@@ -12,7 +12,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
 const client = new ApolloClient({
-  uri: "http://coronavirus-react.herokuapp.com/graphql"
+  uri: "https://coronavirus-react.herokuapp.com/graphql"
 });
 
 const Root = () => (
