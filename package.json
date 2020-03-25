@@ -6,6 +6,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "graphql": "^14.6.0",
     "mongoose": "^5.9.5",
@@ -28,7 +29,7 @@
     "npm": "6.13.7"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node -r esm server.js",
     "client": "cd client && yarn start",
     "build": "cd client && yarn build",
     "install-client": "cd client && yarn install",
