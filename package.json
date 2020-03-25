@@ -28,11 +28,12 @@
     "npm": "6.13.7"
   },
   "scripts": {
+    "start": "node server.js",
+    "client": "cd client && yarn start",
     "build": "cd client && yarn build",
     "install-client": "cd client && yarn install",
     "heroku-postbuild": "yarn install-client && yarn build",
     "start:client": "cd client && yarn start",
-    "client": "cd client && yarn start",
     "dev:server": "NODE_ENV=development nodemon --exec babel-node server.js",
     "dev": "concurrently \"yarn client\" \"yarn dev:server\""
   },
