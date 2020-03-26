@@ -29,7 +29,7 @@
     "npm": "6.13.7"
   },
   "scripts": {
-    "start": "node -r esm server.js",
+    "start": "nodemon --exec babel-node server.js",
     "client": "cd client && yarn start",
     "build": "cd client && yarn build",
     "install-client": "cd client && yarn install",
@@ -38,5 +38,15 @@
     "dev:server": "NODE_ENV=development nodemon --exec babel-node server.js",
     "dev": "concurrently \"yarn client\" \"yarn dev:server\""
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CandyMan999/corona-react.git"
+  },
+  "author": "John Lewis <jalewis1221@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/CandyMan999/corona-react/issues"
+  },
+  "homepage": "https://github.com/CandyMan999/corona-react#readme",
+  "description": ""
 }

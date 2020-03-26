@@ -2,7 +2,9 @@ import db from "../../db/models";
 import { gql } from "apollo-server-express";
 
 export const commentResolver = async (parent, args) => {
-  return await db.Comment.find();
+  const data = await db.Comment.find();
+
+  return data;
 };
 
 export const commentDefs = gql`
