@@ -38,6 +38,15 @@ const server = new ApolloServer({
 });
 server.applyMiddleware({ app });
 
+const errorHandler = (err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+  const { status } = err;
+  res.status(status).json(err);
+};
+app.use(errorHandler);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
