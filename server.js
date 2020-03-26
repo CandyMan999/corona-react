@@ -12,7 +12,7 @@ import { typeDefs, resolvers } from "./graphql";
 
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://coronavirus-react.herokuapp.com/graphql",
   credentials: true
 };
 app.use(cors(corsOptions));
